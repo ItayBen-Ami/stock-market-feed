@@ -3,6 +3,7 @@ import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { streamSSE } from "hono/streaming";
+import { serveStatic } from "@hono/node-server/serve-static";
 import { EventEmitter } from "node:events";
 
 const app = new Hono();
@@ -45,15 +46,9 @@ const updateStockPrices = () => {
   }));
 
   eventEmitter.emit("stocksUpdated");
-  scheduleNextUpdate();
 };
 
-const scheduleNextUpdate = () => {
-  const updateInterval = Math.floor(Math.random() * 4000 + 1000);
-  setTimeout(updateStockPrices, updateInterval);
-};
-
-scheduleNextUpdate();
+setInterval(updateStockPrices, 5 * 1000);
 
 app.get("/stocks", (c) => {
   return c.json({ stocks });
@@ -100,6 +95,8 @@ app.get("/stocks-sse", async (c) => {
     }
   });
 });
+
+app.use('*', serveStatic({ root: './static' }));
 
 const port = 3000;
 console.log(`Server is running on http://localhost:${port}`);
