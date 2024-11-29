@@ -2,7 +2,9 @@
   "name": "server",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "build": "npx esbuild src/index.ts --bundle --platform=node --format=cjs --outfile=dist/index.cjs",
+    "dev": "tsx watch src/index.ts",
+    "start": "NODE_ENV=production node dist/index.cjs"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
@@ -11,6 +13,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "esbuild": "^0.24.0",
     "tsx": "^4.7.1"
   }
 }
