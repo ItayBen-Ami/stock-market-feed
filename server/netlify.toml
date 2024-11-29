@@ -1,4 +1,5 @@
 [[redirects]]
   from = "/*"
-  to = "/"
+  to = "//static/index.html"
   status = 200
+  force = false
