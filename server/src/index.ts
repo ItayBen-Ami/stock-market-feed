@@ -21,13 +21,13 @@ app.use(
 );
 let stocks = [
   { name: "Apple", symbol: "AAPL", price: 3000, time: Date.now() },
-  { name: "Google", symbol: "GOOGL", price: 2800, time: Date.now() },
+  { name: "Google", symbol: "GOOGL", price: 2500, time: Date.now() },
   { name: "Amazon", symbol: "AMZN", price: 3500, time: Date.now() },
 ];
 
 function getStockPriceChange() {
   const possibleValues = [];
-  for (let i = -300; i <= 300; i += 10) {
+  for (let i = -500; i <= 500; i += 100) {
     if (i !== 0) {
       possibleValues.push(i);
     }
