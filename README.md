@@ -1,7 +1,7 @@
 # Real-Time Stock Market Feed
 
 This project demonstrates three methods for real-time data streaming: Short Polling, WebSockets, and Server-Sent Events (SSE). It includes a server built with [Hono](https://hono.dev/) and a React client that visualizes stock data using [ShadCN Charts](https://ui.shadcn.com/charts). 
-The app serves as a learning tool to explore different real-time data handling techniques, expanded upon in [this article](https://dev.to/itaybenami/sse-vs-websockets-vs-polling-real-time-made-easy-with-hono-react-52pn-temp-slug-8908105?preview=2a96c7392872b652bf6d49ee9efe8120282a5443e402a3efd51e0bc658a6a56c671d24607a9a26a496f1b7c2f2e15c5fe8207044cd99d76111595d91).
+The app serves as a learning tool to explore different real-time data handling techniques, expanded upon in [this article](https://dev.to/itaybenami/sse-websockets-or-polling-build-a-real-time-stock-app-with-react-and-hono-1h1g).
 
 ---
 
